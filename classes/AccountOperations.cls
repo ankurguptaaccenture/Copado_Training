@@ -1,13 +1,15 @@
 public class AccountOperations {
     public static Account setDefaultDescription(Account a) {
-        a.Description = 'Default Desc';
+        a.Description = 'Default Description';
         return a;
     }
     
     public static Account setDefaultPhone(Account  a)
     {
-        a.phone ='12345'; // Confliting
-        return a;    
+        if(a.Description == 'Default Description'){
+            a.phone ='12345';
+        }
+        return a;       
     }
     
     public static Account setDefaultWebsite(Account  a)
@@ -17,5 +19,4 @@ public class AccountOperations {
         }
         return a;    
     }
-    
 }
